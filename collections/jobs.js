@@ -238,12 +238,14 @@ BLSchema = new SimpleSchema({
 		MBLNo:{
 			type:String,
 			label:"MBL No.",
+			optional: true,
 			max: 30,
 			defaultValue:""
 		},
 		MBLDate:{
 			type:String,
 			label:"MBL Date",
+			optional: true,
 			defaultValue:function(){
 			return new Date();
 		},
@@ -445,6 +447,11 @@ IGMSchema = new SimpleSchema({
         type: "number"
       }
     }},
+	SubItemNo:{type:String,label:"Sub-Item No.",defaultValue:"",max:5,autoform: {
+	      afFieldInput: {
+	        type: "number"
+	      }
+	    }},
 	InwardDate:{type:String,label:"Inward Date",optional:true,autoform: {
       afFieldInput: {
         type: "date"
