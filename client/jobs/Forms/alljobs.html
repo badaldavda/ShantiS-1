@@ -21,10 +21,11 @@
 		{{#EasySearch.Each index=alljobs}}
 			{{> rowjobs}}
 		{{/EasySearch.Each}}
-
+{{> EasySearch.LoadMore index=alljobs content="Load more content"}}
 		{{else}}
 		<p>Loading...</p>
 		{{/if}}
+
 	</tbody>
 </table>
 </template>

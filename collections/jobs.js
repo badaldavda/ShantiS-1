@@ -1120,9 +1120,9 @@ jobCreationSchema = new SimpleSchema({
 AllJobsIndex = new EasySearch.Index({
 	collection: JobCreation,
 	fields:['JobNo','Port','ImporterName'],
-	limit: 20,
 	engine:new EasySearch.Minimongo({
-		sort: () => { JobNo: 1 }
+		sort: function(){
+			return {JobNo: -1} }
 	}),
 });
 

@@ -3,11 +3,11 @@
 	<h1>Enter IGM Details</h1>
     {{#if igmMode}}
    {{#autoForm collection="IGMDetails" id="iGMDetailsInsert" type="insert"}}
-		  	
+
     {{> afQuickField name ='IGMNo'}}
     {{> afQuickField name='Date'}}
     {{> afQuickField name='ItemNo'}}
-
+		{{> afQuickField name='SubItemNo'}}
     {{> afQuickField name="InwardDate"}}
     {{> afQuickField name="DestuffingYard" options=yardNames}}
     {{> afQuickField name="MumbaiIGMNo"}}
@@ -24,7 +24,7 @@
     {{> afQuickField name ='IGMNo'}}
     {{> afQuickField name='Date'}}
     {{> afQuickField name='ItemNo'}}
-
+		{{> afQuickField name='SubItemNo'}}
     {{> afQuickField name="InwardDate"}}
     {{> afQuickField name="DestuffingYard" options=yardNames}}
     {{> afQuickField name="MumbaiIGMNo"}}
