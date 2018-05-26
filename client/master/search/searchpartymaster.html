@@ -1,8 +1,11 @@
 <template name = "searchpartymaster">
 {{> search}}
-<br><br>
-Search Here: {{> EasySearch.Input index=partyIndex }}
-<br><br>
+	<div class="page-header clearfix">
+    <h4 class="pull-left">Search Party/Telephone/Email</h4>
+    <div class="pull-right">
+      {{> EasySearch.Input index=partyIndex attributes=attributes}}
+    </div>
+	</div>
     <ul class="list-group">
         {{#EasySearch.Each index=partyIndex }}
             <div class="panel-group">
@@ -13,9 +16,10 @@ Search Here: {{> EasySearch.Input index=partyIndex }}
             <!-- {{#if $Session.get 'showOther'}} -->
 			        <div id="{{_id}}" class="panel-collapse collapse">
 				        <li class="list-group-item">Mobile: {{Mobile}}</li>
+                <li class="list-group-item">Email Id: {{Email}}</li>
                 <li class="list-group-item">Tel 2: {{Telephone2}}</li>
                 <li class="list-group-item">Tel 3: {{Telephone3}}</li>
-                <li class="list-group-item">Tel 4: {{Telephone4}}</li>                
+                <li class="list-group-item">Tel 4: {{Telephone4}}</li>
 				        <li class="list-group-item">IECCode: {{IECCode}}</li>
 				        <li class="list-group-item">Bank Name: {{BankName}}</li>
 				        <li class="list-group-item"> Bank Branch: {{BankBranch}}</li>

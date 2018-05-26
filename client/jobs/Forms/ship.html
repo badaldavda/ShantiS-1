@@ -12,7 +12,8 @@
 			{{> afQuickField name="CoPersonName1"}}
 			{{> afQuickField name="CoPersonName2"}}
 		    {{> afQuickField name="NextAgent" options=shipPartyName}}
-		    
+				{{> afQuickField name="Remarks"}}
+
   <div class="form-group">
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-default">Reset Form</button>
@@ -28,12 +29,13 @@
 			{{> afQuickField name="ETA"}}
 			{{> afQuickField name="CoPersonName1"}}
 			{{> afQuickField name="CoPersonName2"}}
-		    {{> afQuickField name="NextAgent" options=shipPartyName}}		    
+		    {{> afQuickField name="NextAgent" options=shipPartyName}}
+				{{> afQuickField name="Remarks"}}	    
 		  <div class="form-group">
 		    <button type="submit" class="btn btn-primary">Submit</button>
 		    <button type="reset" class="btn btn-default">Reset Form</button>
 		  </div>
 {{/autoForm}}
-{{/if}}    
-	
+{{/if}}
+
 </template>

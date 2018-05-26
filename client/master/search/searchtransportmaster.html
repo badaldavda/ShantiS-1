@@ -1,8 +1,11 @@
 <template name = "searchtransportmaster">
 {{> search}}
-<br><br>
-Search Here: {{> EasySearch.Input index=transportIndex }}
-<br><br>
+<div class="page-header clearfix">
+  <h4 class="pull-left">Search Transport/Telephone/Email</h4>
+  <div class="pull-right">
+    {{> EasySearch.Input index=transportIndex attributes=attributes}}
+  </div>
+</div>
     <ul class="list-group">
         {{#EasySearch.Each index=transportIndex }}
             <div class="panel-group">
@@ -15,7 +18,7 @@ Search Here: {{> EasySearch.Input index=transportIndex }}
 				        <li class="list-group-item">Mobile: {{TransMobile}}</li>
                 <li class="list-group-item">Tel 2: {{Transtelephone2}}</li>
                 <li class="list-group-item">Tel 3: {{Transtelephone3}}</li>
-                <li class="list-group-item">Tel 4: {{Transtelephone4}}</li>          
+                <li class="list-group-item">Tel 4: {{Transtelephone4}}</li>
 				        <li class="list-group-item">Bank Name: {{TransBankName}}</li>
 				        <li class="list-group-item"> Bank Branch: {{TransBankBranch}}</li>
 				        <li class="list-group-item">Account No.: {{TransAcNo}}</li>

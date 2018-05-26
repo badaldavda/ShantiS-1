@@ -7,5 +7,13 @@ self.autorun(function(){
 
 Template.searchyardmaster.helpers({
   yardIndex: () => YardMasterIndex,
-  
+  attributes: function () {
+  return {
+     type: 'search',
+     placeholder: 'Search Here...',
+     autocomplete: "off",
+     class: 'form-control input-sm'
+
+   };
+ }
 });

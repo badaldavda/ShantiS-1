@@ -28,13 +28,6 @@ Template.boe.helpers({
 		var total = av+duty+bndlic;
 		return total;
 		},
-	octroiAmount:function(){
-		var total = Number(AutoForm.getFieldValue('TotalRs'));
-		var percent = Number(AutoForm.getFieldValue('Octroi'));
-
-		var octCost = total*percent/100;
-		return octCost;
-	}
 
 });
 AutoForm.addHooks('beDetailsUpdate',{
@@ -55,7 +48,7 @@ AutoForm.addHooks('beDetailsInsert', {
 	{
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

@@ -1,8 +1,11 @@
 <template name = "searchshippingmaster">
 {{> search}}
-<br><br>
-Search Here: {{> EasySearch.Input index=shippingIndex }}
-<br><br>
+<div class="page-header clearfix">
+  <h4 class="pull-left">Search ShippingCo/Telephone/Email</h4>
+  <div class="pull-right">
+    {{> EasySearch.Input index=shippingIndex attributes=attributes}}
+  </div>
+</div>
     <ul class="list-group">
         {{#EasySearch.Each index=shippingIndex }}
             <div class="panel-group">

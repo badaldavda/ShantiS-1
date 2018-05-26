@@ -92,9 +92,9 @@ DocSchema = new SimpleSchema({
         type: "date"
       }
 		},
-		
+
     }
-		
+
 });
 
 BESchema = new SimpleSchema({
@@ -125,11 +125,11 @@ BESchema = new SimpleSchema({
 		max:8
 	},
 	Date:{type:String,label:"B/E Date.",defaultValue:"",
-	autoform: { afFieldInput: 
+	autoform: { afFieldInput:
 		{ type: "date"
 	}}
 	},
-	
+
 	AV:{type:String,label:"A/V Rs.", max: 15, defaultValue:"0.00",autoform: {
       afFieldInput: {
         type: "number"
@@ -140,7 +140,7 @@ BESchema = new SimpleSchema({
         type: "number"
       }
     }},
-	DutyDate:{type:String,label:"Duty Payment Date",defaultValue:"",optional:true, autoform: { afFieldInput: 
+	DutyDate:{type:String,label:"Duty Payment Date",defaultValue:"",optional:true, autoform: { afFieldInput:
 		{ type: "date"
 	}}},
 	BndLic:{type:String,label:"Bond Amt. / Licence Amt. Rs.", max: 9, defaultValue:"0.00",autoform: {
@@ -149,16 +149,6 @@ BESchema = new SimpleSchema({
       }
     }},
 	TotalRs:{type:String,label:"Total Rs.", max: 9, defaultValue:"0.00",autoform: {
-      afFieldInput: {
-        type: "number"
-      }
-    }},
-	Octroi:{type:String,label:"Octroi %", max: 4, defaultValue:"0.00",autoform: {
-      afFieldInput: {
-        type: "number"
-      }
-    }},
-	OctAmt:{type:String,label:"Octroi Amt. Rs.", max: 6, defaultValue:"0.00",autoform: {
       afFieldInput: {
         type: "number"
       }
@@ -217,7 +207,7 @@ BLSchema = new SimpleSchema({
         type: "number"
       }
     }
-		},	
+		},
 
 		LoadPort:{
 			type:String,
@@ -242,8 +232,8 @@ BLSchema = new SimpleSchema({
       		afFieldInput: {
         	type: "date"
       		}
-    	}	
-		},		
+    	}
+		},
 
 		MBLNo:{
 			type:String,
@@ -261,8 +251,8 @@ BLSchema = new SimpleSchema({
       		afFieldInput: {
         	type: "date"
       		}
-    	}	
-		},			
+    	}
+		},
 
 
 		Container:{
@@ -310,7 +300,7 @@ FssaiSchema = new SimpleSchema({
   autoform:{
   	type:"hidden",
   },
-},	
+},
 	AppNo:{type:String,label:"FSSAI Application No.", max: 30, defaultValue:""},
 	AppDate:{type:String,label:"FSSAI Application Date", autoform: {
       afFieldInput: {
@@ -319,7 +309,7 @@ FssaiSchema = new SimpleSchema({
     AptDate:{type:String,label:"FSSAI Appointment Date", autoform: {
       afFieldInput: {
         type: "date"
-      }}}, 
+      }}},
     Fssichrgs:{type:String,label:"FSSAI Charges", max: 30, defaultValue:""},
     SampleFwd:{type:String,label:"FSSAI Sample Forwarding Date", autoform: {
       afFieldInput: {
@@ -329,7 +319,7 @@ FssaiSchema = new SimpleSchema({
       afFieldInput:{
         type: "date"
       }}},
-    FssaiSts:{type:String,label:"FSSAI Report Status", allowedValues:['Pass','Fail']},  
+    FssaiSts:{type:String,label:"FSSAI Report Status", allowedValues:['Pass','Fail']},
 	updatedBy:{
 	type:String,
 	label:"Prepared By",
@@ -356,7 +346,7 @@ PqSchema = new SimpleSchema({
   autoform:{
   	type:"hidden",
   },
-},	
+},
 	IroNo:{type:String,label:"PQ IRO No.", max: 30, defaultValue:""},
 	IroAppDate:{type:String,label:"IRO Application Date", autoform: {
       afFieldInput: {
@@ -365,7 +355,7 @@ PqSchema = new SimpleSchema({
     IroAptDate:{type:String,label:"PQ Appointment Date", autoform: {
       afFieldInput: {
         type: "date"
-      }}}, 
+      }}},
     Irochrgs:{type:String,label:"PQ Charges Rs.", max: 30, defaultValue:""},
     IroRpt:{type:String,label:"PQ Report Date", autoform: {
       afFieldInput:{
@@ -398,7 +388,7 @@ TxtSchema = new SimpleSchema({
   autoform:{
   	type:"hidden",
   },
-},	
+},
 	TxtSampNo:{type:String,label:"Textile Sample No.", max: 30, defaultValue:""},
 	TxtAppDate:{type:String,label:"Sample Draw Date", autoform: {
       afFieldInput: {
@@ -407,7 +397,7 @@ TxtSchema = new SimpleSchema({
     TxtRcdDate:{type:String,label:"Sample Received Date", autoform: {
       afFieldInput: {
         type: "date"
-      }}}, 
+      }}},
     Txtchrgs:{type:String,label:"Textiles Committee Charges Rs.", max: 30, defaultValue:""},
     TxtRpt:{type:String,label:"Textile Report Date", autoform: {
       afFieldInput:{
@@ -455,7 +445,7 @@ IGMSchema = new SimpleSchema({
         type: "number"
       }
     }},
-	InwardDate:{type:String,label:"Inward Date",autoform: {
+	InwardDate:{type:String,label:"Inward Date",optional:true,autoform: {
       afFieldInput: {
         type: "date"
       }}},
@@ -557,7 +547,7 @@ DOSchema = new SimpleSchema({
       afFieldInput: {
         type: "date"
       }}},
-    
+
 	Charges:{type:String,label:"D/O Charges Rs.", max: 7, defaultValue:0,autoform: {
       afFieldInput: {
         type: "number"
@@ -585,7 +575,7 @@ DOSchema = new SimpleSchema({
 	        type: "date"
 	      }}},
 	EmptyYardName:{type:String,label:"Empty Yard's Name",defaultValue:""},
-	
+
 	updatedBy:{
 		type:String,
 			label:"Prepared By",
@@ -636,6 +626,7 @@ ShippingSchema = new SimpleSchema({
     CoPersonName1:{type:String,label:"S. Co. Person Name 1",defaultValue:"",optional:true},
 	CoPersonName2:{type:String,label:"S. Co. Person Name 2",defaultValue:"",optional:true},
 	NextAgent:{type:String, label:"Next Agent",defaultValue:"",optional:true},
+	Remarks:{type:String, label:"Add Remarks (if any)",defaultValue:"",optional:true},
 	updatedBy:{type:String,
 		label:"Prepared By",
 		autoValue:function(){
@@ -644,7 +635,7 @@ ShippingSchema = new SimpleSchema({
 		autoform:{
 			type:"hidden"
 		}}
-	
+
 });
 
 YardSchema = new SimpleSchema({
@@ -670,11 +661,11 @@ YardSchema = new SimpleSchema({
 	ContainerArr:{type:String,label:"Container Arrived On",autoform: {
       afFieldInput: {
         type: "date"
-      }}},	
+      }}},
 	ContainerDes:{type:String,label:"Container Destuffed On",optional:true,autoform: {
       afFieldInput: {
         type: "date"
-      }}},	
+      }}},
 	Containerhold:{type:String,label:"Container Hold",optional:true,
 	autoform:{
 		afFieldInput:{
@@ -699,7 +690,7 @@ YardSchema = new SimpleSchema({
 		autoform:{
 			type:"hidden",
 		}}
-	
+
 });
 
 DocDocksSchema = new SimpleSchema({
@@ -736,7 +727,7 @@ DocDocksSchema = new SimpleSchema({
       afFieldInput: {
         type: "date"
       }}},
-	
+Remarks:{type:String, label:"Add Remarks (if any)",defaultValue:"",optional:true},
 	updatedBy:{type:String,
 		label:"Prepared By",
 		autoValue:function(){
@@ -745,7 +736,7 @@ DocDocksSchema = new SimpleSchema({
 		autoform:{
 			type:"hidden"
 		}}
-	
+
 });
 
 DeliverySchema = new SimpleSchema({
@@ -776,6 +767,7 @@ DeliverySchema = new SimpleSchema({
       afFieldInput: {
         type: "date"
       }}},
+	Remarks:{type:String, label:"Add Remarks (if any)",defaultValue:"",optional:true},
 	updatedBy:{type:String,
 		label:"Prepared By",
 		autoValue:function(){
@@ -785,7 +777,7 @@ DeliverySchema = new SimpleSchema({
 			type:"hidden"
 		}},
 	TransporterName:{type:String,label:"Transporter's Name",defaultValue:""},
-	
+
 });
 
 BillingSchema = new SimpleSchema({
@@ -819,6 +811,7 @@ BillingSchema = new SimpleSchema({
       afFieldInput: {
         type: "date"
       }}},
+		Remarks:{type:String, label:"Add Remarks (if any)",defaultValue:"",optional:true},
     updatedBy:{type:String,
 		label:"Prepared By",
 		autoValue:function(){
@@ -827,7 +820,7 @@ BillingSchema = new SimpleSchema({
 		autoform:{
 			type:"hidden"
 		}}
-	
+
 });
 
 PartyMasterSchema = new SimpleSchema({
@@ -918,7 +911,7 @@ ShippingMasterSchema = new SimpleSchema({
 	BlankCheque:{type:Boolean, label:"BLANK Cheque",defaultValue:0},
 	BankVer:{type:Boolean,label:"Bank Verification",defaultValue:0},
 	NOCLetter:{type:Boolean,label:"NOC Letter",defaultValue:0},
-	
+
 });
 
 
@@ -970,7 +963,7 @@ YardMasterIndex = new EasySearch.Index({
 EmptyYardMasterSchema = new SimpleSchema({
 	EYrdName:{type:String,label:"Empty Yard Name", max: 50, defaultValue:""},
 	EYrdTelephone:{type:String,label:"Empty Yard Telephone No.", max: 11, defaultValue:0,optional:true},
-	
+
 	EYrdLocation:{type:String,label:"Empty Yard Location", max: 50},
 	/*ScoMobile:{type:String,label:"S.CO Mobile No.", max: 10, defaultValue:0},*/
 	EYrdEmail:{type:String,label:"Empty Yard Email ID", max: 30, defaultValue:"",optional:true,autoform: {
@@ -1099,7 +1092,7 @@ jobCreationSchema = new SimpleSchema({
 	},
 	/*BE:{
 		type:BESchema,
-		label:"BE Details"	
+		label:"BE Details"
 	},*/
 
 	BLDetails:{
@@ -1110,13 +1103,21 @@ jobCreationSchema = new SimpleSchema({
 	PGASEL:{type:String,label:"Select Partner Government Agency",
 		allowedValues: ['N/A','FSSAI','PQ','FSSAI - PQ','ADC','WLRO','TEXTILE'],
 		defaultValue:"N/A"
-	},	
+	},
 	/*PGA:{
 		type:PGASchema,
 		label:"Select PGA"
-	},*/	
+	},*/
 });
 
+AllJobsIndex = new EasySearch.Index({
+	collection: JobCreation,
+	fields:['JobNo','Port','ImporterName'],
+	limit: 20,
+	engine:new EasySearch.Minimongo({
+		sort: () => { JobNo: 1 }
+	}),
+});
 
 /*PartySchema = new SimpleSchema({
 	Create:{
@@ -1152,16 +1153,16 @@ JobSchema = new SimpleSchema({
 		label:"Creation of new Job"
 	},
 
-	
+
 
 	OrDoc:{
 		type:OriginalDocSchema,
 		optional:true,
 		label:"Original Document"
 	},
-	
 
-	
+
+
 
 	ShippingDetails:{
 		type:ShippingSchema,
@@ -1182,7 +1183,7 @@ JobSchema = new SimpleSchema({
 		type:DeliverySchema,
 		label:"Delivery Details"
 	}
-	
+
 });
 
 /*Meteor.methods({
@@ -1246,7 +1247,7 @@ BeDetails.allow({
 	update: function(userId,doc){
 		console.log("Running");
 		return !!userId;
-	}		
+	}
 });
 
 DODetails.allow({
@@ -1268,7 +1269,7 @@ IGMDetails.allow({
 	update: function(userId,doc){
 		console.log("Running");
 		return !!userId;
-	}		
+	}
 });
 
 FssaiDetails.allow({
@@ -1279,7 +1280,7 @@ FssaiDetails.allow({
 	update: function(userId,doc){
 		console.log("Running");
 		return !!userId;
-	}		
+	}
 }),
 
 TextDetails.allow({
@@ -1290,7 +1291,7 @@ TextDetails.allow({
 	update: function(userId,doc){
 		console.log("Running");
 		return !!userId;
-	}		
+	}
 }),
 PqDetails.allow({
 	insert: function(userId,doc){
@@ -1300,7 +1301,7 @@ PqDetails.allow({
 	update: function(userId,doc){
 		console.log("Running");
 		return !!userId;
-	}		
+	}
 }),
 StampDutyDetails.allow({
 	insert: function(userId,doc){
@@ -1317,28 +1318,28 @@ PartyMasterDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 YardMasterDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 EmptyYardMasterDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 GetDocDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 
@@ -1346,14 +1347,14 @@ TransportMasterDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 ShippingMasterDetails.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return true;
-	},		
+	},
 });
 
 

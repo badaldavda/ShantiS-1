@@ -41,7 +41,7 @@ AutoForm.addHooks('billDetailsInsert', {
 	{
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

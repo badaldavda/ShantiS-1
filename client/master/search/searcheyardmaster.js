@@ -7,5 +7,13 @@ self.autorun(function(){
 
 Template.searcheyardmaster.helpers({
   eyardIndex: () => EmptyYardMasterIndex,
-  
+  attributes: function () {
+  return {
+     type: 'search',
+     placeholder: 'Search Here...',
+     autocomplete: "off",
+     class: 'form-control input-sm'
+
+   };
+ }
 });

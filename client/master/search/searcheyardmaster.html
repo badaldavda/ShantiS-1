@@ -1,8 +1,11 @@
 <template name = "searcheyardmaster">
 {{> search}}
-<br><br>
-Search Here: {{> EasySearch.Input index=eyardIndex }}
-<br><br>
+<div class="page-header clearfix">
+  <h4 class="pull-left">Search Yard/Telephone/Email</h4>
+  <div class="pull-right">
+    {{> EasySearch.Input index=eyardIndex attributes=attributes}}
+  </div>
+</div>
     <ul class="list-group">
         {{#EasySearch.Each index=eyardIndex }}
             <div class="panel-group">

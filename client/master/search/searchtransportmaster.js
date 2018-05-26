@@ -7,5 +7,13 @@ self.autorun(function(){
 
 Template.searchtransportmaster.helpers({
   transportIndex: () => TransportMasterIndex,
-  
+  attributes: function () {
+  return {
+     type: 'search',
+     placeholder: 'Search Here...',
+     autocomplete: "off",
+     class: 'form-control input-sm'
+
+   };
+ }
 });

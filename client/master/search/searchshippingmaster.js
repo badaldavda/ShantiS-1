@@ -7,5 +7,13 @@ self.autorun(function(){
 
 Template.searchshippingmaster.helpers({
   shippingIndex: () => ShippingMasterIndex,
-  
+  attributes: function () {
+  return {
+     type: 'search',
+     placeholder: 'Search Here...',
+     autocomplete: "off",
+     class: 'form-control input-sm'
+
+   };
+ }
 });

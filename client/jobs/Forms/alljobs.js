@@ -1,21 +1,30 @@
 //Meteor.subscribe('jobCreation');
 Template.alljobs.onCreated(function(){
-var self =this;
-self.autorun(function(){
-	var id = this._id;
+let template = Template.instance();
+
+template.autorun(function(){
+	var id = template._id;
 	console.log(id);
-	self.subscribe('jobCreation');
-	self.subscribe('dODetailsAll');
-	self.subscribe('originalDocAll');
-	self.subscribe('yardDetailsAll');
-	self.subscribe('deliveryDetailsAll');
-	self.subscribe('iGMDetailsAll');
-	self.subscribe('beDetailsAll');
-    self.subscribe('billingDetailsAll');
+	template.subscribe('jobCreation');
+	template.subscribe('dODetailsAll');
+	template.subscribe('originalDocAll');
+	template.subscribe('yardDetailsAll');
+	template.subscribe('deliveryDetailsAll');
+	template.subscribe('iGMDetailsAll');
+	template.subscribe('beDetailsAll');
+  template.subscribe('billingDetailsAll');
 });
 });
+
 Template.alljobs.helpers({
-    alljobs:()=>{
-		return JobCreation.find({},{sort:{DateOfCreation:-1}});
-	}
+    alljobs:() => AllJobsIndex,
+		attributes: function () {
+    return {
+       type: 'search',
+       placeholder: 'Search Here...',
+			 autocomplete: "off",
+			 class: 'form-control input-sm'
+
+		 };
+	 }
 });

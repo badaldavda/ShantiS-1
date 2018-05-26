@@ -1,4 +1,11 @@
 <template name = "alljobs">
+	<div class="page-header clearfix">
+    <h4 class="pull-left">Jobs</h4>
+    <div class="pull-right">
+      {{> EasySearch.Input index=alljobs attributes=attributes}}
+    </div>
+	</div>
+
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -11,9 +18,9 @@
 
 	<tbody>
 	{{#if Template.subscriptionsReady}}
-		{{#each alljobs}}
+		{{#EasySearch.Each index=alljobs}}
 			{{> rowjobs}}
-		{{/each}}
+		{{/EasySearch.Each}}
 
 		{{else}}
 		<p>Loading...</p>

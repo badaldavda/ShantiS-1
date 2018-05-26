@@ -1,8 +1,11 @@
 <template name = "searchyardmaster">
 {{> search}}
-<br><br>
-Search Here: {{> EasySearch.Input index=yardIndex }}
-<br><br>
+<div class="page-header clearfix">
+  <h4 class="pull-left">Search Transport/Telephone/Email</h4>
+  <div class="pull-right">
+    {{> EasySearch.Input index=yardIndex attributes=attributes}}
+  </div>
+</div>
     <ul class="list-group">
         {{#EasySearch.Each index=yardIndex }}
             <div class="panel-group">
@@ -15,7 +18,7 @@ Search Here: {{> EasySearch.Input index=yardIndex }}
                 <li class="list-group-item">Tel 2: {{YrdTelephone2}}</li>
                 <li class="list-group-item">Tel 3: {{YrdTelephone3}}</li>
                 <li class="list-group-item">Tel 4: {{YrdTelephone4}}</li>
-                  
+
 				        <li class="list-group-item">Bank Name: {{YrdBankName}}</li>
 				        <li class="list-group-item"> Bank Branch: {{YrdBankBranch}}</li>
 				        <li class="list-group-item">Account No.: {{YrdAcNo}}</li>

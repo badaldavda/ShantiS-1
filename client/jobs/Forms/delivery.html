@@ -3,7 +3,7 @@
 {{#if deliveryMode}}
     <!--{{> quickForm collection="deliveryDetails" id="deliveryDetailsInsert" type="insert"}}-->
     {{#autoForm collection="DeliveryDetails" id="deliveryDetailsInsert" type="insert"}}
-		  	
+
     {{> afQuickField name ='Address'}}
     {{> afQuickField name='TruckNo'}}
     {{> afQuickField name='MobileNo'}}
@@ -12,6 +12,7 @@
     {{> afQuickField name="DeliveryOutBy"}}
     {{> afQuickField name="DeliveryOutOn"}}
     {{> afQuickField name="TransporterName" options = transNames}}
+    {{> afQuickField name="Remarks"}}
      <div class="form-group">
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-default">Reset Form</button>
@@ -20,7 +21,7 @@
 {{else}}
 	<!--{{> quickForm collection="deliveryDetails" id="deliveryDetailsUpdate" type="update" doc=deliveryId}}-->
 	{{#autoForm collection="DeliveryDetails" id="deliveryDetailsUpdate" type="update" doc=deliveryId}}
-		  	
+
     {{> afQuickField name ='Address'}}
     {{> afQuickField name='TruckNo'}}
     {{> afQuickField name='MobileNo'}}
@@ -29,6 +30,7 @@
     {{> afQuickField name="DeliveryOutBy"}}
     {{> afQuickField name="DeliveryOutOn"}}
     {{> afQuickField name="TransporterName" options = transNames}}
+    {{> afQuickField name="Remarks"}}
      <div class="form-group">
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-default">Reset Form</button>
