@@ -6,6 +6,10 @@ Meteor.publish('jobCreation',function(){
 return JobCreation.find({});
 });
 
+Meteor.publish('jobCreationOne',function(id){
+return JobCreation.find({JobId:id});
+});
+
 Meteor.publish('originalDoc',function(id){
 return OriginalDoc.find({JobId:id});
 });
@@ -114,6 +118,11 @@ return StampDutyDetails.find({});
 
 Meteor.publish('partyMasterDetails',function(){
 return PartyMasterDetails.find({});
+});
+
+Meteor.publish('partyMasterDetailsOneEmail',function(id){
+  job = JobCreation.findOne({_id:id},{fields:{ImporterName:1}});
+return PartyMasterDetails.find({ClientName:job.ImporterName});
 });
 
 Meteor.publish('shippingMasterDetails',function(){

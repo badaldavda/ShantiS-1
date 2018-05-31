@@ -571,8 +571,8 @@ DOSchema = new SimpleSchema({
         type: "number"
       }
     }},
-	CollectedBy:{type:String,label:"D O Collected By",defaultValue:""},
-	CollectedDate:{type:String,label:"Date of Collection",defaultValue:"",autoform: {
+	CollectedBy:{type:String,label:"D O Collected By",defaultValue:"",optional:true},
+	CollectedDate:{type:String,optional:true,label:"Date of Collection",autoform: {
 	      afFieldInput: {
 	        type: "date"
 	      }}},

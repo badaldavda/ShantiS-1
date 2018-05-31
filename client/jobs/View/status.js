@@ -1,8 +1,10 @@
 Template.status.onCreated(function(){
-	
+
 var self =this;
 self.autorun(function(){
 	var id = FlowRouter.getParam('id');
+	self.subscribe('jobCreationOne',id);
+
 	self.subscribe('dODetails',id);
 	self.subscribe('originalDoc',id);
 	self.subscribe('yardDetails',id);
@@ -10,6 +12,10 @@ self.autorun(function(){
 	self.subscribe('iGMDetails',id);
 	self.subscribe('beDetails',id);
     self.subscribe('billingDetails',id);
+self.subscribe('partyMasterDetailsOneEmail',id);
+
+
+		//self.subscribe('partyMasterDetailsOne',Session.get('importer'));
 });
 });
 
@@ -18,12 +24,13 @@ Template.status.helpers({
 		var id = FlowRouter.getParam('id');
     	ves = IGMDetails.findOne({JobId:id},{fields:{InwardDate:1}});
     	console.log(ves);
-    	if(ves.InwardDate == '' || typeof ves == 'undefined')
+    	if(typeof ves == 'undefined' || ves.InwardDate == '' )
     	{
     		return true;
     	}
     	else{return false;}
-		
+
+
 	},
 	orD:function(){
 		var id = FlowRouter.getParam('id');
@@ -34,7 +41,7 @@ Template.status.helpers({
     		return true;
     	}
     	else{return false;}
-		
+
 	},
 	DOCollected:function(){
 		var id = FlowRouter.getParam('id');
@@ -56,7 +63,7 @@ Template.status.helpers({
     		return true;
     	}
     	else{return false;}
-		
+
 	},
 	thoka:function(){
 
@@ -102,6 +109,75 @@ Template.status.helpers({
     	{
     		return true;
     	}
-    	else{return false;}	
+    	else{return false;}
 	}
+});
+
+Template.status.events({
+	'click #btnEmail':function(e)
+	{
+		var id = FlowRouter.getParam('id');
+			ves = IGMDetails.findOne({JobId:id},{fields:{InwardDate:1}});
+			orDoc = OriginalDoc.findOne({JobId:id},{fields:{OrRec:1,OrRecDate:1}});
+			DOCol = DODetails.findOne({JobId:id},{fields:{Charges:1}});
+			contAr = YardDetails.findOne({JobId:id},{fields:{ContainerArr:1}});
+			th = BeDetails.findOne({JobId:id},{fields:{No:1}});
+			dd = BeDetails.findOne({JobId:id},{fields:{DutyDate:1}});
+			del = DeliveryDetails.findOne({JobId:id},{fields:{DeliveryOutOn:1}});
+			bil = BillingDetails.findOne({JobId:id},{fields:{CourierDate:1}});
+			job1 = JobCreation.findOne({_id:id});
+			console.log(job1);
+			partyemail = PartyMasterDetails.findOne({"ClientName":job1.ImporterName},{fields:{Email:1}});
+			console.log(partyemail.Email);
+			var subject = "Update for Job No. "+job1.JobNo;
+			var body = "Hello,\n\nFollowing is the status update for Job No. "+job1.JobNo+"\n\n";
+
+			if(typeof ves == 'undefined' || ves.InwardDate == '')
+			{
+				body += "Vessel Arrived - Not Yet\n";
+			}
+			else{
+				body += "Vessel Arrived - Yes ("+ves.InwardDate+")\n";
+			}
+			if(typeof orDoc == 'undefined')
+    	{
+    		body += "Original Documents Received - Not Yet (Kindly do the needful)\n";
+    	}
+    	else{
+				body += "Original Documents Received - Yes ("+orDoc.OrRecDate+")\n";
+		}
+		if(typeof DOCol == 'undefined' || DOCol.CollectedBy=='')
+		{
+			body += "Delivery Order Collected - Not Yet\n";
+		}
+		else{body += "Delivery Order Collected - Yes\n";}
+		if(typeof contAr == 'undefined' || contAr.ContainerArr=='')
+		{
+			body += "Container Arrived - Not Yet\n";
+		}
+		else{body += "Container Arrived - Yes ("+contAr.ContainerArr+")\n";}
+		if(typeof th == 'undefined' || th.No=='')
+		{
+			body += "Thoka Done - Not Yet\n";
+		}
+		else{body += "Thoka Done - Yes(Thoka No. -"+th.No+")\n";}
+		if(typeof dd == 'undefined' || dd.DutyDate == '')
+		{
+			body += "Duty Paid - Not Yet\n";
+		}
+		else{body += "Duty Paid - Yes("+dd.DutyDate+")\n";}
+		if(typeof del == 'undefined' || del.DeliveryOutOn == '')
+		{
+			body += "Delivery Out - Not Yet\n";
+		}
+		else{body += "Delivery Out - Yes(On - "+del.DeliveryOutOn+")\n";}
+
+		body += "\n\nThanks and Regards,\nShanti Shipping"
+			body = encodeURIComponent(body);
+
+		e.preventDefault();
+		console.log(subject);
+		console.log(body);
+		window.location.href = "mailto:"+partyemail.Email+"?Subject="+subject+"&body="+body
+	},
 });
