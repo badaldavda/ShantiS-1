@@ -20,10 +20,23 @@
                 <li class="list-group-item">Tel 4: {{YrdTelephone4}}</li>
 
 				        <li class="list-group-item">Bank Name: {{YrdBankName}}</li>
-				        <li class="list-group-item"> Bank Branch: {{YrdBankBranch}}</li>
+				        <li class="list-group-item">Bank Branch: {{YrdBankBranch}}</li>
 				        <li class="list-group-item">Account No.: {{YrdAcNo}}</li>
 				        <li class="list-group-item">Account Type: {{YrdAccountType}}</li>
 				        <li class="list-group-item">IFSC Code: {{YrdIfsc}}</li>
+
+                <li class="list-group-item">
+                  Additional Details:
+
+                  {{#each MorePeople}}
+                  <ul class="list-group">
+                    <li class="list-group-item">Name: {{Name}}</li>
+                    <li class="list-group-item">Email: {{EmailId}}</li>
+                    <li class="list-group-item">Mobile: {{MobileNo}}</li>
+                  </ul>
+                  {{/each}}
+
+                </li>
 			        <!-- {{/if}} -->
 
         			</div>

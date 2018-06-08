@@ -871,6 +871,40 @@ PartyMasterSchema = new SimpleSchema({
 
 });
 
+PersonalInfoSchema = new SimpleSchema({
+	Name:{
+		type:String,
+		label:"Name",
+		max:40,
+		defaultValue:""
+	},
+	EmailId:{
+		type:String,
+		label:"Email ID",
+		max: 40,
+		defaultValue:"",
+		optional:true,
+		autoform:{
+			placeholder:"abc@gmail.com",
+			autocomplete:'off',
+			afFieldInput: {
+        type: "email"
+      }
+		}
+	},
+	MobileNo:{
+		type:String,
+		label:"Mobile No",
+		max:12,
+		optional:true,
+		autoform: {
+      afFieldInput: {
+        type: "number"
+      }
+    }
+	}
+});
+
 
 PartyMasterIndex = new EasySearch.Index({
 	collection: PartyMasterDetails,
@@ -918,7 +952,7 @@ ShippingMasterSchema = new SimpleSchema({
 	BlankCheque:{type:Boolean, label:"BLANK Cheque",defaultValue:0},
 	BankVer:{type:Boolean,label:"Bank Verification",defaultValue:0},
 	NOCLetter:{type:Boolean,label:"NOC Letter",defaultValue:0},
-
+	MorePeople:{type:[PersonalInfoSchema],label:"Add more people"}
 });
 
 
@@ -957,7 +991,8 @@ YardMasterSchema = new SimpleSchema({
 	YrdBankBranch:{type:String,label:"CFS Bank Branch", max: 50, defaultValue:""},
 	YrdAcNo:{type:String,label:"CFS A/C No", max: 20, defaultValue:""},
 	YrdAccountType:{type:String,label:"CFS Account Type", allowedValues: ['Savings', 'Current']},
-	YrdIfsc:{type:String,label:"CFS IFSC Code", max: 15, defaultValue:""}
+	YrdIfsc:{type:String,label:"CFS IFSC Code", max: 15, defaultValue:""},
+	MorePeople:{type:[PersonalInfoSchema],label:"Add more people"}
 });
 
 

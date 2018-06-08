@@ -1,4 +1,4 @@
-Template.billDetails.onCreated(function(){	
+Template.billDetails.onCreated(function(){
 var self =this;
 self.autorun(function(){
 	var id = FlowRouter.getParam('id');
@@ -19,7 +19,13 @@ Template.billDetails.events({
 	'click #btnbill':function(e)
 	{
 		var id = FlowRouter.getParam('id');
-		e.preventDefault();
-		FlowRouter.go("/:id/bill",{id:id});;;
+		dd = BeDetails.findOne({JobId:id},{fields:{DutyDate:1}});
+		if(typeof dd == 'undefined' || dd.DutyDate == '')
+			alert("Please Fill Duty Details (IN BOE Details) First");
+		else
+			FlowRouter.go("/:id/bill",{id:id});
+		//e.preventDefault();
+		//FlowRouter.go("/:id/bill",{id:id});;;
 	},
+
 });

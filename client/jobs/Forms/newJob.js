@@ -37,15 +37,21 @@ Template.newJob.helpers({
 	return [{label:'FSSAI',value:'FSSAI'},{label:'PQ',value:'PQ'},{label:'FSSAI - PQ',value:'FSSAI - PQ'},
 	{label:'ADC',value:'ADC'},{label:'WLRO',value:'WLRO'},{label:'TEXTILE',value:'TEXTILE'},{label:'N/A',value:'N/A'}]
 	}
-	
+
 });
 
 
-//AutoForm.hooks({ newJobInsert: { before: { insert: function(doc) { console.log(doc); } }, after: { insert: function(error, result) { console.log('Occured error: ' + error); } }, beginSubmit: function() { console.log('begin submit'); }, onSuccess: function(formType, result) { console.log("Insert succeeded"); console.log('Result ' + result); }, onError: function(formType, error) { console.log('Error!!!'); console.log(error); } } }); 
-AutoForm.addHooks('customerItem', {
+//AutoForm.hooks({ newJobInsert: { before: { insert: function(doc) { console.log(doc); } }, after: { insert: function(error, result) { console.log('Occured error: ' + error); } }, beginSubmit: function() { console.log('begin submit'); }, onSuccess: function(formType, result) { console.log("Insert succeeded"); console.log('Result ' + result); }, onError: function(formType, error) { console.log('Error!!!'); console.log(error); } } });
+AutoForm.addHooks('insertNewJob', {
   onSubmit: function (insertDoc, updateDoc, currentDoc) {
-    console.log(arguments);
-    return false;
-  }
+		// alert('Data Inserted');
+     console.log(arguments);
+     return false;
+	 },
+		onSuccess:function(id,doc)
+		{
+			alert('Data Inserted');
+
+		}
 });
 SimpleSchema.debug = true;
