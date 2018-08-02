@@ -44,4 +44,4 @@ AutoForm.addHooks('docDocksFormInsert', {
 		
 	}
 });
-SimpleSchema.debug = true;
+//SimpleSchema.debug = true;

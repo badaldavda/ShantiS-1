@@ -33,10 +33,10 @@ AutoForm.addHooks('billDetailsUpdate',{
 });
 
 AutoForm.addHooks('billDetailsInsert', {
-  	onSubmit: function (insertDoc, updateDoc, currentDoc) {
-    console.log(arguments);
-    return false;
-  },
+//  	onSubmit: function (insertDoc, updateDoc, currentDoc) {
+//    console.log(arguments);
+//    return false;
+//  },
 	onSuccess:function(id,doc)
 	{
 		alert('Data Inserted');
@@ -44,4 +44,4 @@ AutoForm.addHooks('billDetailsInsert', {
 
 	}
 });
-SimpleSchema.debug = true;
+//SimpleSchema.debug = true;

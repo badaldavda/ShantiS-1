@@ -51,7 +51,7 @@ AutoForm.addHooks('beDetailsInsert', {
 
 	}
 });
-SimpleSchema.debug = true;
+//SimpleSchema.debug = true;
 /*Template.registerHelper("addition",function(){
 	var av = Number(AutoForm.getFieldValue("AV"));
 	var duty = Number(AutoForm.getFieldValue("Duty"));

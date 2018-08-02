@@ -81,7 +81,7 @@ DocSchema = new SimpleSchema({
 	Rec:{
 			type:String,
 			label:"Mail/Courier",
-			allowedValues: ['Mail', 'Courier']
+			allowedValues: ['Mail', 'Courier', 'WhatsApp']
 		},
 		RecDate:{
 			type:Date,
@@ -811,9 +811,9 @@ BillingSchema = new SimpleSchema({
       afFieldInput: {
         type: "date"
       }}},
-    BillMadeBy:{type:String,label:"Bill Made By",defaultValue:""},
-    CourierName:{type:String,label:"Courier Name",defaultValue:""},
-    TrackingNo:{type:String,label:"Tracking No.",defaultValue:""},
+    BillMadeBy:{type:String,label:"Bill Made By"},
+    CourierName:{type:String,label:"Courier Name"},
+    TrackingNo:{type:String,label:"Tracking No.",type:"required"},
     CourierDate:{type:String,label:"Courier Date",autoform: {
       afFieldInput: {
         type: "date"
@@ -876,7 +876,8 @@ PersonalInfoSchema = new SimpleSchema({
 		type:String,
 		label:"Name",
 		max:40,
-		defaultValue:""
+		defaultValue:"",
+                optional:true
 	},
 	EmailId:{
 		type:String,
@@ -946,13 +947,14 @@ ShippingMasterSchema = new SimpleSchema({
 	ScoIfsc:{type:String,label:"S.CO IFSC Code", max: 15, defaultValue:""},
 	WorkingSat:{type:Boolean,label:"Saturday Working?",defaultValue:0},
 	Bond:{type:Boolean, label:"Rs 100/- Bond",defaultValue:0},
-	Bond2:{type:Boolean, label:"Rs 500/- Bond",defaultValue:0},
+	Bond200:{type:Boolean, label:"Rs 200/- Bond",defaultValue:0},
+        Bond2:{type:Boolean, label:"Rs 500/- Bond",defaultValue:0},
 	LetterHead:{type:Boolean,label: "Letter Head",defaultValue:0},
 	Insurance:{type:Boolean,label:"Insurance",defaultValue:0},
 	BlankCheque:{type:Boolean, label:"BLANK Cheque",defaultValue:0},
 	BankVer:{type:Boolean,label:"Bank Verification",defaultValue:0},
 	NOCLetter:{type:Boolean,label:"NOC Letter",defaultValue:0},
-	MorePeople:{type:[PersonalInfoSchema],label:"Add more people"}
+	MorePeople:{type:[PersonalInfoSchema],label:"Add more people",optional:true}
 });
 
 
@@ -980,7 +982,7 @@ YardMasterSchema = new SimpleSchema({
         type: "number"
       }
     }},
-	YrdLocation:{type:String,label:"CFS Location", max: 50, allowedValues: ['JNPT/Nhavasheva', 'Panvel'] },
+	YrdLocation:{type:String,label:"CFS Location", max: 50, allowedValues: ['JNPT/Nhavasheva', 'Panvel', 'Sahar Air Cargo'] },
 	/*ScoMobile:{type:String,label:"S.CO Mobile No.", max: 10, defaultValue:0},*/
 	YrdEmail:{type:String,label:"CFS Email ID", max: 30, defaultValue:"",autoform: {
       afFieldInput: {
@@ -992,7 +994,7 @@ YardMasterSchema = new SimpleSchema({
 	YrdAcNo:{type:String,label:"CFS A/C No", max: 20, defaultValue:""},
 	YrdAccountType:{type:String,label:"CFS Account Type", allowedValues: ['Savings', 'Current']},
 	YrdIfsc:{type:String,label:"CFS IFSC Code", max: 15, defaultValue:""},
-	MorePeople:{type:[PersonalInfoSchema],label:"Add more people"}
+	MorePeople:{type:[PersonalInfoSchema],label:"Add more people",optional:true}
 });
 
 
