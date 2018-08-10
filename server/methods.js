@@ -36,4 +36,7 @@ Meteor.methods({
 	'updatebillDoc':function(id){
 		BillingDetails.update({JobId:id},{$set:{updatedBy:function(){return Meteor.userId();}}});
 	},
+	'updateJob':function(id){
+		JobCreation.update({JobId:id},{$set:{updatedBy:function(){return Meteor.userId();}}});
+	}
 });

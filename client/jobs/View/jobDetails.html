@@ -3,7 +3,7 @@
         <div class="panel-group">
 				<div class="panel panel-default">
 				<div class="panel-heading">
-  					<h4 class="panel-title"><a data-toggle="collapse" href="#jobDet">Job Details: {{jobs.JobNo}}</a></h4>
+  					<h4 class="panel-title"><a data-toggle="collapse" href="#jobDet">Job Details: {{jobs.JobNo}}</a><span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true" id="btnUpdateJob" style="cursor:pointer"></span></h4>
   				</div>
         <!-- {{#if $Session.get 'showOther'}} -->
 		        <div id="jobDet" class="panel-collapse collapse">
@@ -41,7 +41,7 @@
 			        	MBL Date: {{jobs.BLDetails.MBLDate}}
 			        </li>
 			        <li class="list-group-item">
-			        	Container(s): 
+			        	Container(s):
 			        	{{#each  jobs.BLDetails.Container}}
 			        		{{containerNo}}
 			        	{{/each}}

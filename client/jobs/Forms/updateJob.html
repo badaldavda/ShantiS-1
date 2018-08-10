@@ -1,0 +1,42 @@
+<template name = "updateJob">
+<div class="new-job-container">
+
+  {{#autoForm collection="JobCreation" id="updateJob" type="update" doc=jobDoc}}
+
+  <fieldset>
+  <legend>Update Job</legend>
+
+  {{> afQuickField name ='JobNo'}}
+  {{> afQuickField name='Port' options=port}}
+  {{> afQuickField name='PartyJob'}}
+
+  {{> afQuickField name="ImporterName" options=party}}
+  {{> afQuickField name="Doc.Rec" options=MC}}
+  {{> afQuickField name="Doc.RecDate"}}
+  {{> afQuickField name="BLDetails.TypeOfCargo" options=TOC}}
+  {{> afQuickField name="BLDetails.PkgNo"}}
+  {{> afQuickField name="BLDetails.GrossWt"}}
+  {{> afQuickField name="BLDetails.CBM"}}
+  {{> afQuickField name="BLDetails.LoadPort"}}
+  {{> afQuickField name="BLDetails.MBLNo"}}
+  {{> afQuickField name="BLDetails.MBLDate"}}
+  {{> afQuickField name="BLDetails.HBLNo"}}
+  {{> afQuickField name="BLDetails.HBLDate"}}
+  {{> afQuickField name="BLDetails.Container"}}
+  {{> afQuickField name="BLDetails.VesselBL"}}
+  {{> afQuickField name="BLDetails.Voyage"}}
+  {{> afQuickField name="PGASEL" options=poptions}}
+
+  </fieldset>
+
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="reset" class="btn btn-default">Reset Form</button>
+  </div>
+
+
+
+  {{/autoForm}}
+
+</div>
+</template>

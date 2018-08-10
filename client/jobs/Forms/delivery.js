@@ -51,7 +51,7 @@ AutoForm.addHooks('deliveryDetailsInsert', {
 	{
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

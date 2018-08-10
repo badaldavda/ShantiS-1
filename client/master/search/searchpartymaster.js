@@ -18,8 +18,19 @@ Template.searchpartymaster.helpers({
  }
 });
 
-/*Template.searchpartymaster.events({
-	'click h4': function(){
-		Session.set('showOther', !Session.get('showOther'));
-	}
-});*/
+Template.searchpartymaster.events({
+  'click #btnUpdateParty':function(e)
+  {
+    console.log(this._id);
+
+    var id = this._id;
+
+    e.preventDefault();
+
+    FlowRouter.go("/:id/updateParty",{id:id});
+    //var id = FlowRouter.getParam('id');
+    //
+    //FlowRouter.go("/:id/updatejob",{id:id});
+
+  },
+});

@@ -1124,6 +1124,19 @@ jobCreationSchema = new SimpleSchema({
 		}
 	},
 
+	UpdatedBy:{
+		type:String,
+		label:"Prepared By",
+		optional:true,
+		autoValue:function(){
+			//console.log("Came here:"+this.userId);
+			return Meteor.userId();
+		},
+		autoform:{
+			type:"hidden"
+		}
+	},
+
 	ImporterName:{
 		type:String,
 		label:"Importer M/s.",
@@ -1363,6 +1376,10 @@ PartyMasterDetails.allow({
 		console.log("Running");
 		return true;
 	},
+	update: function(userId,doc){
+		console.log("Running");
+		return true;
+	},
 });
 
 YardMasterDetails.allow({
@@ -1399,11 +1416,20 @@ ShippingMasterDetails.allow({
 		console.log("Running");
 		return true;
 	},
+	update: function(userId,doc){
+		console.log(userId);
+		console.log("Running");
+		return true;
+	},
 });
 
 
 JobCreation.allow({
 	insert: function(userId,doc){
+		console.log("Running");
+		return true;
+	},
+	update: function(userId,doc){
 		console.log("Running");
 		return true;
 	},

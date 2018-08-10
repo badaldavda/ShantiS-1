@@ -17,3 +17,15 @@ Template.searchshippingmaster.helpers({
    };
  }
 });
+
+Template.searchshippingmaster.events({
+  'click #btnUpdateShipping':function(e)
+  {
+    console.log(this._id);
+
+    var id = this._id;
+
+    FlowRouter.go("/:id/updateShipping",{id:id});
+
+  }
+});

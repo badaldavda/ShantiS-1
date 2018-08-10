@@ -21,41 +21,41 @@
 			<li><input type="submit" value="Create Job"></li>
 		</ul>
 		</form> -->
-		{{#autoForm collection="JobCreation" id="insertNewJob" type="insert"}}
-  		
-  	<fieldset>
-    <legend>Create New Job</legend>
-    {{> afQuickField name ='JobNo'}}
-    {{> afQuickField name='Port' options=port}}
-    {{> afQuickField name='PartyJob'}}
+					{{#autoForm collection="JobCreation" id="insertNewJob" type="insert"}}
 
-    {{> afQuickField name="ImporterName" options=party}}
-    {{> afQuickField name="Doc.Rec" options=MC}}
-    {{> afQuickField name="Doc.RecDate"}}
-    {{> afQuickField name="BLDetails.TypeOfCargo" options=TOC}}
-    {{> afQuickField name="BLDetails.PkgNo"}}
-    {{> afQuickField name="BLDetails.GrossWt"}}
-    {{> afQuickField name="BLDetails.CBM"}}
-    {{> afQuickField name="BLDetails.LoadPort"}}
-    {{> afQuickField name="BLDetails.MBLNo"}}
-    {{> afQuickField name="BLDetails.MBLDate"}}
-    {{> afQuickField name="BLDetails.HBLNo"}}
-    {{> afQuickField name="BLDetails.HBLDate"}}
-    {{> afQuickField name="BLDetails.Container"}}
-    {{> afQuickField name="BLDetails.VesselBL"}}
-    {{> afQuickField name="BLDetails.Voyage"}}
-    {{> afQuickField name="PGASEL" options=poptions}}
-    
-  </fieldset>
+			  	<fieldset>
+			    <legend>Create New Job</legend>
+			    {{> afQuickField name ='JobNo'}}
+			    {{> afQuickField name='Port' options=port}}
+			    {{> afQuickField name='PartyJob'}}
 
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="reset" class="btn btn-default">Reset Form</button>
-  </div>
+			    {{> afQuickField name="ImporterName" options=party}}
+			    {{> afQuickField name="Doc.Rec" options=MC}}
+			    {{> afQuickField name="Doc.RecDate"}}
+			    {{> afQuickField name="BLDetails.TypeOfCargo" options=TOC}}
+			    {{> afQuickField name="BLDetails.PkgNo"}}
+			    {{> afQuickField name="BLDetails.GrossWt"}}
+			    {{> afQuickField name="BLDetails.CBM"}}
+			    {{> afQuickField name="BLDetails.LoadPort"}}
+			    {{> afQuickField name="BLDetails.MBLNo"}}
+			    {{> afQuickField name="BLDetails.MBLDate"}}
+			    {{> afQuickField name="BLDetails.HBLNo"}}
+			    {{> afQuickField name="BLDetails.HBLDate"}}
+			    {{> afQuickField name="BLDetails.Container"}}
+			    {{> afQuickField name="BLDetails.VesselBL"}}
+			    {{> afQuickField name="BLDetails.Voyage"}}
+			    {{> afQuickField name="PGASEL" options=poptions}}
+
+			  </fieldset>
+
+			  <div class="form-group">
+			    <button type="submit" class="btn btn-primary">Submit</button>
+			    <button type="reset" class="btn btn-default">Reset Form</button>
+			  </div>
 
 
 
-  {{/autoForm}}
+			  {{/autoForm}}
 <!--{{> quickForm collection="JobCreation" id="newJobInsert" type="insert" }}
 -->
 	</div>
