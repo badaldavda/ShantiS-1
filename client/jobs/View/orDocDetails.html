@@ -1,0 +1,13 @@
+<template name = "orDocDetails">
+        <div class="panel-group">
+						<div class="panel panel-default">
+								<div class="panel-heading"><h4 class="panel-title">
+									{{#if docMode}}
+			        			Document Received Date : Yet to be Received. Please contact to recieve as soon as Possible
+									{{else}}
+									Original Document Recieved On {{docDate.OrRecDate}}
+										{{/if}}
+									<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true" id="btnDocDetails" style="cursor:pointer"></span></h4></div>
+    		</div>
+    	</div>
+</template>

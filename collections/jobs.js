@@ -59,11 +59,6 @@ OriginalDocSchema = new SimpleSchema({
 		  	type:"hidden",
 		  },
 		},
-		OrRec:{
-			type:Boolean,
-			label:"Original Recieved?",
-			defaultValue:0
-		},
 		OrRecDate:{
 			type:String,
 			label:"Reception Date",

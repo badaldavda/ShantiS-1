@@ -1,5 +1,5 @@
 
-Template.orDoc.onCreated(function(){
+Template.orDocDetails.onCreated(function(){
 var self =this;
 self.autorun(function(){
 	var id = FlowRouter.getParam('id');
@@ -7,7 +7,7 @@ self.autorun(function(){
 });
 });
 
-Template.orDoc.helpers({
+Template.orDocDetails.helpers({
 	jobId:function(){
 		var id = FlowRouter.getParam('id');
 		console.log(id);
@@ -25,12 +25,16 @@ Template.orDoc.helpers({
 		var id = FlowRouter.getParam('id');
 		var id1 = OriginalDoc.findOne({JobId:id},{fields:{OrRecDate:1}});
 		return id1;
-	},
-	documentinfo:function(){
-		var id = FlowRouter.getParam('id');
-		var id1 = OriginalDoc.findOne({JobId:id});
-		return id1;
 	}
+});
+
+Template.orDocDetails.events({
+	'click #btnDocDetails':function(e)
+	{
+		var id = FlowRouter.getParam('id');
+		e.preventDefault();
+		FlowRouter.go("/:id/orDoc",{id:id});
+	},
 });
 
 AutoForm.addHooks('orDocRec', {
