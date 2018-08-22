@@ -17,3 +17,15 @@ Template.searchtransportmaster.helpers({
    };
  }
 });
+
+Template.searchtransportmaster.events({
+  'click #btnUpdateTransport':function(e)
+  {
+    console.log(this._id);
+
+    var id = this._id;
+
+    FlowRouter.go("/:id/UpdateTransport",{id:id});
+
+  }
+});

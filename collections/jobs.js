@@ -1382,10 +1382,20 @@ YardMasterDetails.allow({
 		console.log("Running");
 		return true;
 	},
+	update: function(userId,doc){
+		console.log(userId);
+		console.log("Running");
+		return true;
+	},
 });
 
 EmptyYardMasterDetails.allow({
 	insert: function(userId,doc){
+		console.log("Running");
+		return true;
+	},
+	update: function(userId,doc){
+		console.log(userId);
 		console.log("Running");
 		return true;
 	},
@@ -1396,11 +1406,21 @@ GetDocDetails.allow({
 		console.log("Running");
 		return true;
 	},
+	update: function(userId,doc){
+		console.log(userId);
+		console.log("Running");
+		return true;
+	},
 });
 
 
 TransportMasterDetails.allow({
 	insert: function(userId,doc){
+		console.log("Running");
+		return true;
+	},
+	update: function(userId,doc){
+		console.log(userId);
 		console.log("Running");
 		return true;
 	},

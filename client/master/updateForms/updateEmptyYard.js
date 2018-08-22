@@ -1,14 +1,14 @@
-Template.updateParty.onCreated(function(){
+Template.updateEmptyYard.onCreated(function(){
 var self =this;
 self.autorun(function(){
-	self.subscribe('partyMasterDetails');
+	self.subscribe('emptyYardMasterDetails');
 });
 });
 
-Template.updateParty.helpers({
-partyDoc:function(){
+Template.updateEmptyYard.helpers({
+emptyyardDoc:function(){
   var id = FlowRouter.getParam('id');
-  id1 = PartyMasterDetails.findOne({_id:id});
+  id1 = EmptyYardMasterDetails.findOne({_id:id});
   //console.log(id1._id)
   return id1;
 }
@@ -24,4 +24,4 @@ var postHooks = {
    }
 }
 
-AutoForm.addHooks('PartyMasterDetailsInsert', postHooks);
+AutoForm.addHooks('EmptyYardMasterDetailsUpdate', postHooks);

@@ -1,14 +1,14 @@
-Template.updateShipping.onCreated(function(){
+Template.updateYard.onCreated(function(){
 var self =this;
 self.autorun(function(){
-	self.subscribe('shippingMasterDetails');
+	self.subscribe('yardMasterDetails');
 });
 });
 
-Template.updateShipping.helpers({
-shippingDoc:function(){
+Template.updateYard.helpers({
+yardDoc:function(){
   var id = FlowRouter.getParam('id');
-  id1 = ShippingMasterDetails.findOne({_id:id});
+  id1 = YardMasterDetails.findOne({_id:id});
   //console.log(id1._id)
   return id1;
 }
@@ -24,4 +24,4 @@ var postHooks = {
    }
 }
 
-AutoForm.addHooks('ShippingMasterDetailsUpdate', postHooks);
+AutoForm.addHooks('YardMasterDetailsUpdate', postHooks);

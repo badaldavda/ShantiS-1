@@ -7,13 +7,13 @@ self.autorun(function(){
 
 
 var postHooks = {
-	before: { 
-     insert: function(doc) { 
-     	doc.YrdName = doc.YrdName.toUpperCase();   
+	before: {
+     insert: function(doc) {
+     	doc.YrdName = doc.YrdName.toUpperCase();
       	//console.log(doc.YrdName);
-      return doc; 
-     } 
-   } 
+      return doc;
+     }
+   }
 }
 
 AutoForm.addHooks('YardMasterDetailsInsert', postHooks);

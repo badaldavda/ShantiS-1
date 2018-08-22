@@ -1,14 +1,14 @@
-Template.updateParty.onCreated(function(){
+Template.updateTransport.onCreated(function(){
 var self =this;
 self.autorun(function(){
-	self.subscribe('partyMasterDetails');
+	self.subscribe('transportMasterDetails');
 });
 });
 
-Template.updateParty.helpers({
-partyDoc:function(){
+Template.updateTransport.helpers({
+transportDoc:function(){
   var id = FlowRouter.getParam('id');
-  id1 = PartyMasterDetails.findOne({_id:id});
+  id1 = TransportMasterDetails.findOne({_id:id});
   //console.log(id1._id)
   return id1;
 }
@@ -24,4 +24,4 @@ var postHooks = {
    }
 }
 
-AutoForm.addHooks('PartyMasterDetailsInsert', postHooks);
+AutoForm.addHooks('TransportMasterDetailsUpdate', postHooks);

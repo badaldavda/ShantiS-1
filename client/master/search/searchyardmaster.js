@@ -17,3 +17,15 @@ Template.searchyardmaster.helpers({
    };
  }
 });
+
+Template.searchyardmaster.events({
+  'click #btnUpdateYard':function(e)
+  {
+    console.log(this._id);
+
+    var id = this._id;
+
+    FlowRouter.go("/:id/UpdateYard",{id:id});
+
+  }
+});
