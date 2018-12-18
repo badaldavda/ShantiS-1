@@ -40,13 +40,7 @@ Template.alljobs.events({
 
 		//console.log(event)
 		console.log(radio);
-				if(typeof status == 'undefined' || status == 'All')
-				{
-					AllJobsIndex.getComponentMethods().addProps('status', 'Incomplete');
-				}
-				else {
 					AllJobsIndex.getComponentMethods().addProps('status', radio);
-				}
 
 			}
 });

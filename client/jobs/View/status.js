@@ -22,6 +22,7 @@ self.subscribe('partyMasterDetailsOneEmail',id);
 Template.status.helpers({
 	vessel:function(){
 		var id = FlowRouter.getParam('id');
+		Meteor.call('updateCompletedJobField',id);
     	ves = IGMDetails.findOne({JobId:id},{fields:{InwardDate:1}});
     	console.log(ves);
     	if(typeof ves == 'undefined' || ves.InwardDate == '' )

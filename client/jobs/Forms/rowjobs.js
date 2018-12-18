@@ -44,6 +44,7 @@ Template.rowjobs.helpers({
 		var id = this._id;
     	DOCol = DODetails.findOne({JobId:id},{fields:{DOCollectedBy:1}});
     	//console.log(DOCol);
+			//Meteor.call('updateCompletedJobField',id);
     	if(typeof DOCol == 'undefined' || DOCol.CollectedBy=='')
     	{
     		return true;

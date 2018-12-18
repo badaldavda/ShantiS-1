@@ -1178,13 +1178,10 @@ AllJobsIndex = new EasySearch.Index({
 	      const selector = this.defaultConfiguration().selector(searchObject, options, aggregation)
 				status = options.search.props.status;
 	      //filter for the brand if set
-				console.log(options);
-				console.log(selector);
-				console.log(status);
-				if(typeof status == 'undefined' || status == 'All')
-				{selector.status = 'Incomplete'}
-				else
-				{selector.status = status;}
+				//console.log(options);
+				//console.log(selector);
+				//console.log(status);
+				selector.status = status;
 
 
 	      return selector
