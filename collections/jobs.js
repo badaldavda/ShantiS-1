@@ -1156,6 +1156,12 @@ jobCreationSchema = new SimpleSchema({
 		allowedValues: ['N/A','FSSAI','PQ','FSSAI - PQ','ADC','WLRO','TEXTILE'],
 		defaultValue:"N/A"
 	},
+	status:{
+		type: String, label:"Check if Job is completed", defaultValue:"Incomplete",
+		autoform:{
+			type:"hidden"
+		}
+	}
 	/*PGA:{
 		type:PGASchema,
 		label:"Select PGA"
@@ -1164,10 +1170,25 @@ jobCreationSchema = new SimpleSchema({
 
 AllJobsIndex = new EasySearch.Index({
 	collection: JobCreation,
-	fields:['JobNo','Port','ImporterName'],
+	fields:['JobNo','Port','ImporterName','status'],
 	engine:new EasySearch.Minimongo({
 		sort: function(){
-			return {JobNo: -1} }
+			return {JobNo: -1} },
+		selector: function(searchObject, options, aggregation) {
+	      const selector = this.defaultConfiguration().selector(searchObject, options, aggregation)
+				status = options.search.props.status;
+	      //filter for the brand if set
+				console.log(options);
+				console.log(selector);
+				console.log(status);
+				if(typeof status == 'undefined' || status == 'All')
+				{selector.status = 'Incomplete'}
+				else
+				{selector.status = status;}
+
+
+	      return selector
+	    }
 	}),
 });
 

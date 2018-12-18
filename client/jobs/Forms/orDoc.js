@@ -40,6 +40,7 @@ AutoForm.addHooks('orDocRec', {
   },
 	onSuccess:function(id,doc)
 	{
+		Meteor.call('updateCompletedJobField',id);
 		alert('Original Document Recieved');
 	}
 });

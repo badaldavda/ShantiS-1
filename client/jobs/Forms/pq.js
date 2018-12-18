@@ -29,7 +29,7 @@ AutoForm.addHooks('pqDetailsUpdate',{
 		Meteor.call('pqDetailsUpdateMethod',id);
 		alert('Data Updated');
 		window.history.back();
-		
+
 	}
 });
 
@@ -42,7 +42,7 @@ AutoForm.addHooks('pqDetailsInsert', {
 	{
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

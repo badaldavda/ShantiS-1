@@ -175,9 +175,50 @@ Template.status.events({
 		body += "\n\nThanks and Regards,\nShanti Shipping"
 			body = encodeURIComponent(body);
 
+
+			var vesComp = !(typeof ves == 'undefined' || ves.InwardDate == '');
+			var orDocComp = !(typeof orDoc == 'undefined');
+			var DOColComp = !(typeof DOCol == 'undefined' || DOCol.CollectedBy=='');
+			var contArrComp = !(typeof contAr == 'undefined' || contAr.ContainerArr=='');
+			var thComp = !(typeof th == 'undefined' || th.No=='');
+			var ddComp = !(typeof dd == 'undefined' || dd.DutyDate == '');
+			var delComp = !(typeof del == 'undefined' || del.DeliveryOutOn == '');
+			var bilComp = !(typeof bil == 'undefined');
+
+			// console.log("vesComp: ");
+			// console.log(vesComp);
+			//
+			// console.log("orDocComp: ");
+			// console.log(orDocComp);
+			//
+			// console.log("DOColComp: ");
+			// console.log(DOColComp);
+			//
+			// console.log("contArrComp: ");
+			// console.log(contArrComp);
+			//
+			// console.log("thComp: ");
+			// console.log(thComp);
+			//
+			// console.log("ddComp: ");
+			// console.log(ddComp);
+			//
+			// console.log("delComp: ");
+			// console.log(delComp);
+			//
+			// console.log("bilComp: ");
+			// console.log(bilComp);
+
+
+			var completed = vesComp && orDocComp && DOColComp && contArrComp && thComp && ddComp && delComp && bilComp;
+
+	    console.log(completed)
+
 		e.preventDefault();
 		console.log(subject);
 		console.log(body);
-		window.location.href = "mailto:"+partyemail.Email+"?Subject="+subject+"&body="+body
+		var href = "mailto:"+partyemail.Email+"?Subject="+subject+"&body="+body;
+		//window.location.href = href;
+		window.open(href,'_blank');
 	},
 });

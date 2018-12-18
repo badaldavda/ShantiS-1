@@ -1,7 +1,6 @@
 //Meteor.subscribe('jobCreation');
 Template.alljobs.onCreated(function(){
 let template = Template.instance();
-
 template.autorun(function(){
 	var id = template._id;
 	console.log(id);
@@ -27,4 +26,27 @@ Template.alljobs.helpers({
 
 		 };
 	 }
+});
+
+Template.alljobs.events({
+	'change .magiaFiltro': function(e,t){
+		event.preventDefault();
+    //console.log("You checked or unchecked this checkbox");
+		//var documentId = this._id;
+    //var isCompleted = this.completed;
+		console.log(event)
+
+		var radio = $('input:radio[name=status]:checked').val();
+
+		//console.log(event)
+		console.log(radio);
+				if(typeof status == 'undefined' || status == 'All')
+				{
+					AllJobsIndex.getComponentMethods().addProps('status', 'Incomplete');
+				}
+				else {
+					AllJobsIndex.getComponentMethods().addProps('status', radio);
+				}
+
+			}
 });

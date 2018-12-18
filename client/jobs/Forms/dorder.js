@@ -44,9 +44,10 @@ AutoForm.addHooks('DODetailsUpdate',{
 	onSuccess:function(id,doc)
 	{
 		Meteor.call('DODetailsUpdateMethod',id);
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Updated');
 		window.history.back();
-		
+
 	}
 });
 
@@ -57,9 +58,10 @@ AutoForm.addHooks('DODetailsInsert', {
   },
 	onSuccess:function(id,doc)
 	{
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

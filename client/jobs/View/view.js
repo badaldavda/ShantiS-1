@@ -1,8 +1,9 @@
 Template.view.onCreated(function(){
-	
+
 var self =this;
 self.autorun(function(){
-	self.subscribe('jobCreation');
+	var id = FlowRouter.getParam('id');
+	self.subscribe('jobCreationOne',id);
 });
 });
 
@@ -56,14 +57,14 @@ Template.view.events({
 		//console.log('hi');
 		FlowRouter.go("/:id/fssai",{id:id});
 	},
-	
+
 	'click #btnPQ':function(e)
 	{
 		var id = FlowRouter.getParam('id');
 		e.preventDefault();
 		FlowRouter.go("/:id/pq",{id:id});
 	},
-	
+
 	'click #btnTXT':function(e)
 	{
 		var id = FlowRouter.getParam('id');

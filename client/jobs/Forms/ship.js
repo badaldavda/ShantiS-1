@@ -38,6 +38,7 @@ AutoForm.addHooks('shipDetailsUpdate',{
 	onSuccess:function(id,doc)
 	{
 		Meteor.call('shipDetailsUpdateMethod',id);
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Updated');
 		window.history.back();
 	}
@@ -50,9 +51,10 @@ AutoForm.addHooks('shipDetailsInsert', {
   },
 	onSuccess:function(id,doc)
 	{
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Inserted');
 		window.history.back();
-		
+
 	}
 });
 SimpleSchema.debug = true;

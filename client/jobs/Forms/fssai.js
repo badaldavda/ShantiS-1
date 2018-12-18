@@ -43,4 +43,3 @@ AutoForm.addHooks('fssaiDetailsInsert', {
 	}
 });
 SimpleSchema.debug = true;
-

@@ -56,6 +56,7 @@ AutoForm.addHooks('updateJob', {
    onSuccess:function(id,doc)
    {
      Meteor.call('updateJob',id);
+		 Meteor.call('updateCompletedJobField',id);
      alert('Data Updated');
      window.history.back();
    }

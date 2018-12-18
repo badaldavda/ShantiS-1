@@ -1,9 +1,10 @@
 Template.header.onCreated(function(){
-	
+
 var self =this;
 self.autorun(function(){
 	var id = FlowRouter.getParam('id');
-	self.subscribe('jobCreation');
+	self.subscribe('jobCreationOne',id);
+	self.subscribe('jobCreationComplete',id);
 });
 });
 

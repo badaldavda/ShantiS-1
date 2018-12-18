@@ -38,6 +38,7 @@ AutoForm.addHooks('textDetailsInsert', {
   },
 	onSuccess:function(id,doc)
 	{
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Inserted');
 	}
 });

@@ -1,10 +1,10 @@
 //Meteor.subscribe('jobCreation');
 Template.job.onCreated(function(){
-	
+
 var self =this;
 self.autorun(function(){
 	var id = FlowRouter.getParam('id');
-	self.subscribe('jobCreation');
+	self.subscribe('jobCreationOne',id);
 	self.subscribe('shippingDetails',id);
 	self.subscribe('originalDoc',id);
 	self.subscribe('yardDetails',id);
@@ -138,7 +138,7 @@ Template.job.events({
 		var id = FlowRouter.getParam('id');
 		e.preventDefault();
 		FlowRouter.go("/:id/iGMDetails",{id:id});;
-	
+
 	},
 
 	'click #btnFSSAI':function(e)
@@ -148,14 +148,14 @@ Template.job.events({
 		//console.log('hi');
 		FlowRouter.go("/:id/fssai",{id:id});;
 	},
-	
+
 	'click #btnPQ':function(e)
 	{
 		var id = FlowRouter.getParam('id');
 		e.preventDefault();
 		FlowRouter.go("/:id/pq",{id:id});;
 	},
-	
+
 	'click #btnTXT':function(e)
 	{
 		var id = FlowRouter.getParam('id');

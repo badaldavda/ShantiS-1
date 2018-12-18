@@ -148,3 +148,8 @@ return Ports.find({});
 Meteor.publish('getDocDetails',function(){
 return GetDocDetails.find({});
 });
+
+Meteor.publish('jobCreationIncompleteOnly',function(){
+return JobCreation.find({"Completed":false})
+
+});

@@ -37,6 +37,7 @@ AutoForm.addHooks('deliveryDetailsUpdate',{
 	onSuccess:function(id,doc)
 	{
 		Meteor.call('updateDeliveryDoc',id);
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Updated');
 		window.history.back();
 	}
@@ -49,6 +50,7 @@ AutoForm.addHooks('deliveryDetailsInsert', {
   },
 	onSuccess:function(id,doc)
 	{
+		Meteor.call('updateCompletedJobField',id);
 		alert('Data Inserted');
 		window.history.back();
 
