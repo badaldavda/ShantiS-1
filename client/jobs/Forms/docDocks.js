@@ -26,9 +26,9 @@ AutoForm.addHooks('docDocksFormUpdate',{
 	onSuccess:function(id,doc)
 	{
 		Meteor.call('updateDockDocsDoc',id);
-		Meteor.call('updateCompletedJobField',id);
+		//Meteor.call('updateCompletedJobField',id);
 		alert('Data Updated');
-		window.history.back();
+		window.history.go(-1);
 	}
 });
 
@@ -40,9 +40,9 @@ AutoForm.addHooks('docDocksFormInsert', {
   },
 	onSuccess:function(id,doc)
 	{
-		Meteor.call('updateCompletedJobField',id);
+		//Meteor.call('updateCompletedJobField',id);
 		alert('Data Inserted');
-		window.history.back();
+		window.history.go(-1);
 
 	}
 });

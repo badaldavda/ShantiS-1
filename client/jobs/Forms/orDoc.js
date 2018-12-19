@@ -32,15 +32,24 @@ Template.orDoc.helpers({
 		return id1;
 	}
 });
+AutoForm.addHooks('orDocRecUpdate',{
+	onSuccess:function(id,doc)
+	{
+		//Meteor.call('updateDockDocsDoc',id);
+		//Meteor.call('updateCompletedJobField',id);
+		alert('Data Updated');
+		window.history.go(-1);
+	}
+});
 
-AutoForm.addHooks('orDocRec', {
+AutoForm.addHooks('orDocRecInsert', {
   	onSubmit: function (insertDoc, updateDoc, currentDoc) {
     console.log(arguments);
     return false;
   },
 	onSuccess:function(id,doc)
 	{
-		Meteor.call('updateCompletedJobField',id);
+		//Meteor.call('updateCompletedJobField',id);
 		alert('Original Document Recieved');
 	}
 });

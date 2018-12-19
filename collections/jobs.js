@@ -1475,6 +1475,10 @@ OriginalDoc.allow({
 	insert: function(userId,doc){
 		console.log("Running");
 		return !!userId;
+	},
+	update: function(userId,doc){
+		console.log("Running");
+		return !!userId;
 	}
 });
 ShippingDetails.allow({

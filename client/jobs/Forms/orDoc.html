@@ -15,10 +15,8 @@
 		<h1>Enter Original Document Details</h1>
 
 		{{#if docMode}}
-		{{> quickForm collection="OriginalDoc" id="orDocRec" type="insert"}}
-
+			{{> quickForm collection="OriginalDoc" id="orDocRecInsert" type="insert"}}
 		{{else}}
-		{{> quickForm collection="OriginalDoc" id="orDocRec" type="insert" doc=documentinfo}}
-
+			{{> quickForm collection="OriginalDoc" id="orDocRecUpdate" type="update" doc=documentinfo}}
 		{{/if}}
 </template>
