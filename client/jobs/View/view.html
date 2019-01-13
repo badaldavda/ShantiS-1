@@ -14,29 +14,18 @@
 	{{> billDetails}}
 
 	{{#if pgaselfssai}}
-	<br><button class="btn btn-default" name="btnFSSAI" id="btnFSSAI">ENTER FSSAI DETAILS</button>
-{{else}}
-	{{#if pgaselpq}}
-		<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>
-	{{else}}
-		{{#if pgaselfssaipq}}
-			<br><button class="btn btn-default" name="btnFSSAI" id="btnFSSAI">ENTER FSSAI DETAILS</button>
-			<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>
-		{{else}}
-			{{#if pgaseladc}}
-				<br><button class="btn btn-default" name="btnADC" id="btnADC">ENTER ADC DETAILS</button>
-			{{else}}
-				{{#if pgaselwlro}}
-					<br><button class="btn btn-default" name="btnWLRO" id="btnWLRO">ENTER WLRO DETAILS</button>
-				{{else}}
-					{{#if pgaseltextile}}
-						<br><button class="btn btn-default" name="btnTXT" id="btnTXT">ENTER TEXTILE DETAILS</button>
-					{{else}}
-					{{/if}}
-				{{/if}}
-			{{/if}}
-		{{/if}}
+		<br><button class="btn btn-default" name="btnFSSAI" id="btnFSSAI">ENTER FSSAI DETAILS</button>
 	{{/if}}
-{{/if}}
-
+	{{#if pgaselpq}}
+			<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>
+	{{/if}}
+	{{#if pgaseladc}}
+					<br><button class="btn btn-default" name="btnADC" id="btnADC">ENTER ADC DETAILS</button>
+	{{/if}}
+	{{#if pgaselwlro}}
+						<br><button class="btn btn-default" name="btnWLRO" id="btnWLRO">ENTER WLRO DETAILS</button>
+	{{/if}}
+	{{#if pgaseltextile}}
+							<br><button class="btn btn-default" name="btnTXT" id="btnTXT">ENTER TEXTILE DETAILS</button>
+	{{/if}}
 </template>

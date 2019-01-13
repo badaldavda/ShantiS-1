@@ -254,12 +254,32 @@ BLSchema = new SimpleSchema({
 
 		Container:{
 			type:[ContainerSchema],
-			label:"Container(s)"
+			label:"Container(s)",
+			optional: true,
+	    custom: function () {
+				var str = this.field('Port').value;
+				//console.log(str.includes("Air"));
+	      var shouldBeRequired = str.includes("Air");
+
+	      if (!shouldBeRequired) {
+	        // inserts
+	        if (!this.operator) {
+	          if (!this.isSet || this.value === null || this.value === "") return "required";
+	        }
+
+	        // updates
+	        else if (this.isSet) {
+	          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+	          if (this.operator === "$unset") return "required";
+	          if (this.operator === "$rename") return "required";
+	        }
+	      }
+	    }
 		},
 
 		VesselBL:{
 			type:String,
-			label:"Vessel in B/L",
+			label:"Vessel in B/L/Flight Number",
 			max: 50,
 			defaultValue:""
 		},
@@ -620,7 +640,7 @@ ShippingSchema = new SimpleSchema({
       }}},*/
 	ShipCoName:{type:String, label:"Shipping Company Name",defaultValue:""},
 	LocatedAt:{type:String, label:"Located At Mumbai/Andheri/JNPT",defaultValue:""},
-	VesselName:{type:String, label:"Vessel Name",defaultValue:"",optional:true},
+	VesselName:{type:String, label:"Vessel Name/Flight Number",defaultValue:"",optional:true},
 	ETA:{type:String,label:"Estimated Time of Arrival (ETA)",autoform: {
       afFieldInput: {
         type: "date"
@@ -1152,9 +1172,15 @@ jobCreationSchema = new SimpleSchema({
 		label:"B/L Details"
 	},
 
-	PGASEL:{type:String,label:"Select Partner Government Agency",
-		allowedValues: ['N/A','FSSAI','PQ','FSSAI - PQ','ADC','WLRO','TEXTILE'],
-		defaultValue:"N/A"
+	PGASEL:{
+		type:[String],
+		label:"Select Partner Government Agency",
+		allowedValues: ['FSSAI','PQ','ADC','WLRO','TEXTILE'],
+		optional: true,
+		autoform: {
+      group: "jobCreation",
+      type: "select-checkbox-inline"
+    }
 	},
 	status:{
 		type: String, label:"Check if Job is completed", defaultValue:"Incomplete",

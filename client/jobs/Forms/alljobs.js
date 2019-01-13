@@ -23,7 +23,6 @@ Template.alljobs.helpers({
        placeholder: 'Search Here...',
 			 autocomplete: "off",
 			 class: 'form-control input-sm'
-
 		 };
 	 }
 });

@@ -21,7 +21,7 @@ Template.job.helpers({
     jobs:(event,template)=>{
     	var id = FlowRouter.getParam('id');
     	job1 = JobCreation.findOne({_id:id});
-		//console.log(job1.PGASEL);
+		console.log(job1.PGASEL);
 		Session.set('PGASELVAL',job1.PGASEL);
 		return job1;
 	},
@@ -35,7 +35,8 @@ Template.job.helpers({
 			return false;
 	},
 	pgaselfssai:function(){
-			if(Session.get('PGASELVAL')=='FSSAI')
+		console.log(Session.get('PGASELVAL'))
+			if(Session.get('PGASELVAL').indexof('FSSAI')>-1)
 				{return true;}
 			return false;
 			},

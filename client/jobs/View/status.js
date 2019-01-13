@@ -24,7 +24,7 @@ Template.status.helpers({
 		var id = FlowRouter.getParam('id');
 		Meteor.call('updateCompletedJobField',id);
     	ves = IGMDetails.findOne({JobId:id},{fields:{InwardDate:1}});
-    	console.log(ves);
+    	//console.log(ves);
     	if(typeof ves == 'undefined' || ves.InwardDate == '' )
     	{
     		return true;
@@ -36,7 +36,7 @@ Template.status.helpers({
 	orD:function(){
 		var id = FlowRouter.getParam('id');
     	orDoc = OriginalDoc.findOne({JobId:id},{fields:{OrRec:1}});
-    	console.log(orDoc);
+    	//console.log(orDoc);
     	if(typeof orDoc == 'undefined')
     	{
     		return true;
@@ -58,7 +58,7 @@ Template.status.helpers({
 		var id = FlowRouter.getParam('id');
 		//console.log('abv');
     	contAr = YardDetails.findOne({JobId:id},{fields:{ContainerArr:1}});
-    	console.log(contAr);
+    	//console.log(contAr);
     	if(typeof contAr == 'undefined' || contAr.ContainerArr=='')
     	{
     		return true;
@@ -71,7 +71,7 @@ Template.status.helpers({
 		var id = FlowRouter.getParam('id');
 		//console.log('abv');
     	th = BeDetails.findOne({JobId:id},{fields:{No:1}});
-    	console.log(th);
+    	//console.log(th);
     	if(typeof th == 'undefined' || th.No=='')
     	{
     		return true;

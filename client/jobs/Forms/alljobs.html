@@ -1,21 +1,26 @@
 <template name = "alljobs">
 	<a class="btn btn-info" href="/jobs"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;Add New Job</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="radio" class="magiaFiltro" name="status" value="Complete" id="Complete">Complete&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" class="magiaFiltro" name="status" value="Complete" id="Complete"> Complete&nbsp;&nbsp;&nbsp;&nbsp;
       <input type="radio" class="magiaFiltro" name="status" value="Incomplete" id="Incomplete"> Incomplete
 	<div class="page-header clearfix">
-    <h4 class="pull-left">Jobs</h4>
     <div class="pull-right">
       {{> EasySearch.Input index=alljobs attributes=attributes}}
     </div>
 	</div>
 
 <table class="table table-striped">
-	<thead>
+	<colgroup>
+    <col style="width:10%">
+    <col style="width:10%">
+    <col style="width:30%">
+		<col style="width:50%">
+  </colgroup>
+	<thead class='thead-dark'>
 		<tr>
-		<th>Job No.</th>
-		<th>Port</th>
-		<th>Importer Name</th>
-		<th></th>
+		<th scope="col">#</th>
+		<th scope="col">Port</th>
+		<th scope="col">Importer Name</th>
+		<th scope="col">Status</th>
 		</tr>
 	</thead>
 
@@ -24,7 +29,7 @@
 		{{#EasySearch.Each index=alljobs}}
 			{{> rowjobs}}
 		{{/EasySearch.Each}}
-{{> EasySearch.LoadMore index=alljobs content="Load more content"}}
+{{> EasySearch.LoadMore index=alljobs content="More Jobs"}}
 		{{else}}
 		<p>Loading...</p>
 		{{/if}}

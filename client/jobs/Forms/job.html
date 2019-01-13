@@ -17,14 +17,14 @@
 			<li><b>HBL No. </b>{{jobs.BLDetails.HBLNo}}</li>
 			<li><b>Vessel In B/L Copy </b>{{jobs.BLDetails.VesselBL}}</li>
 			<li><b>Voyage </b>{{jobs.BLDetails.Voyage}}</li>
-			
+
 			<li><b>Select Partner Government Agency </b>{{jobs.PGASEL}}</li>
 			<br>
 	</ul>
-	
+
 <!--<a href="/{{jid}}/orDoc">Original Document Recieved? | </a>-->
 <button class="btn btn-default" name="btnDocRec" id="btnDocRec">Original Document Recieved?</button>
-	
+
 <p style="color:green"><b>Original Document Recieved</b></p>
 
 <br><button class="btn btn-default" name="btnShip" id="btnShip">Shipping Details</button>
@@ -39,28 +39,18 @@
 
 {{#if pgaselfssai}}
 	<br><button class="btn btn-default" name="btnFSSAI" id="btnFSSAI">ENTER FSSAI DETAILS</button>
-{{else}}
-	{{#if pgaselpq}}
-		<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>	
-	{{else}}
-		{{#if pgaselfssaipq}}
-			<br><button class="btn btn-default" name="btnFSSAI" id="btnFSSAI">ENTER FSSAI DETAILS</button>
-			<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>
-		{{else}}
-			{{#if pgaseladc}}
+{{/if}}
+{{#if pgaselpq}}
+		<br><button class="btn btn-default" name="btnPQ" id="btnPQ">ENTER PQ DETAILS</button>
+{{/if}}
+{{#if pgaseladc}}
 				<br><button class="btn btn-default" name="btnADC" id="btnADC">ENTER ADC DETAILS</button>
-			{{else}}
-				{{#if pgaselwlro}}
+{{/if}}
+{{#if pgaselwlro}}
 					<br><button class="btn btn-default" name="btnWLRO" id="btnWLRO">ENTER WLRO DETAILS</button>
-				{{else}}
-					{{#if pgaseltextile}}
+{{/if}}
+{{#if pgaseltextile}}
 						<br><button class="btn btn-default" name="btnTXT" id="btnTXT">ENTER TEXTILE DETAILS</button>
-					{{else}}
-					{{/if}}
-				{{/if}}
-			{{/if}}
-		{{/if}}
-	{{/if}}
 {{/if}}
 <!--<p style="color:green"><b>NO PGA INVOLVED</b></p>-->
 </template>

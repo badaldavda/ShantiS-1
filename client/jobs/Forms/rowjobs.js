@@ -22,7 +22,7 @@ Template.rowjobs.helpers({
 		//console.log(id);
     	ves = IGMDetails.findOne({JobId:id},{fields:{InwardDate:1}});
     	//console.log(ves);
-    	if(ves.InwardDate == '' || typeof ves == 'undefined')
+    	if(typeof ves == 'undefined' || ves.InwardDate == '' )
     	{
     		return true;
     	}

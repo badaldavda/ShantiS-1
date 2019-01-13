@@ -9,7 +9,7 @@ self.autorun(function(){
 
 Template.newJob.helpers({
 	MC:function(){
-			return [{label:'Mail',value:'Mail'},{label:'Courier',value:'Courier'}]
+			return [{label:'Mail',value:'Mail'},{label:'Courier',value:'Courier'},{label:'WhatsApp',value:'WhatsApp'}]
 		},
 	TOC:function(){
 		return [{label:'LCL',value:'LCL'},{label:'20" FCL',value:'20" FCL'},{label:'40" FCL',value:'40" FCL'}]
@@ -34,8 +34,8 @@ Template.newJob.helpers({
 			return partyarr;
 	},
 	poptions:function(){
-	return [{label:'FSSAI',value:'FSSAI'},{label:'PQ',value:'PQ'},{label:'FSSAI - PQ',value:'FSSAI - PQ'},
-	{label:'ADC',value:'ADC'},{label:'WLRO',value:'WLRO'},{label:'TEXTILE',value:'TEXTILE'},{label:'N/A',value:'N/A'}]
+	return [{label:'FSSAI',value:'FSSAI'},{label:'PQ',value:'PQ'},
+	{label:'ADC',value:'ADC'},{label:'WLRO',value:'WLRO'},{label:'TEXTILE',value:'TEXTILE'}]
 }
 });
 
