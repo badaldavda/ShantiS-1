@@ -7,7 +7,7 @@ return JobCreation.find({});
 });
 
 Meteor.publish('jobCreationOne',function(id){
-return JobCreation.find({JobId:id});
+return JobCreation.find({_id:id});
 });
 
 Meteor.publish('originalDoc',function(id){
